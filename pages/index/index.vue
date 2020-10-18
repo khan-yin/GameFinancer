@@ -1,35 +1,32 @@
 <template>
 	<view class="index-contain">
-		<view class="index-body">
-			<image src="../../static/common-icons/playLogo.png" class="cell-pic" mode="widthFix"></image>
-		</view>
+		<view class="index-body"><image src="../../static/common-icons/playLogo.png" class="cell-pic" mode="widthFix"></image></view>
 		<image @click="start" class="icon" src="../../static/common-icons/click.png" mode="widthFix"></image>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			start(){
-				uni.switchTab({
-					url:'../home/home'
-				})
-			}
+export default {
+	data() {
+		return {};
+	},
+	methods: {
+		start() {
+			uni.switchTab({
+				url: '../home/home'
+			});
 		}
 	}
+};
 </script>
 
 <style scoped>
-.index-contain{
+
+.index-contain {
 	background-image: url(../../static/background/index.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-color:#0B1E24;
+	background-color: #0b1e24;
 	width: 100vw;
 	height: 100vh;
 	color: #fff;
@@ -39,19 +36,18 @@
 	align-items: center;
 	text-align: center;
 }
-.index-body{
+.index-body {
 	width: 100%;
 }
-.cell-pic{
+.cell-pic {
 	width: 70%;
 	position: relative;
 	top: -50upx;
 }
 
-.icon{
+.icon {
 	position: fixed;
 	bottom: 10vh;
 	width: 15%;
 }
-
 </style>
