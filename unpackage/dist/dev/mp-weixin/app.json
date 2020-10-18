@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/player/player",
+    "pages/investment/investment",
+    "pages/profile/profile"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "#C8E8D8",
+    "navigationBarBackgroundColor": "#2D2E33",
+    "backgroundColor": "#2D2E33"
+  },
+  "tabBar": {
+    "color": "#C8E8D8",
+    "borderStyle": "white",
+    "selectedColor": "#E4C791",
+    "backgroundColor": "#2D2E33",
+    "spacing": "6px",
+    "height": "53px",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./static/tabbar/home.png",
+        "selectedIconPath": "./static/tabbar/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/player/player",
+        "iconPath": "./static/tabbar/player.png",
+        "selectedIconPath": "./static/tabbar/player_active.png",
+        "text": "玩家"
+      },
+      {
+        "pagePath": "pages/investment/investment",
+        "iconPath": "./static/tabbar/investment.png",
+        "selectedIconPath": "./static/tabbar/investment_active.png",
+        "text": "投资"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "./static/tabbar/profile.png",
+        "selectedIconPath": "./static/tabbar/profile_active.png",
+        "text": "用户"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

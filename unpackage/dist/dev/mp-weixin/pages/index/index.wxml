@@ -1,0 +1,1 @@
+<view class="index-contain data-v-57280228"><view class="index-body data-v-57280228"><image class="cell-pic data-v-57280228" src="../../static/common-icons/playLogo.png" mode="widthFix"></image></view><image class="icon data-v-57280228" src="../../static/common-icons/click.png" mode="widthFix" data-event-opts="{{[['tap',[['start',['$event']]]]]}}" bindtap="__e"></image></view>

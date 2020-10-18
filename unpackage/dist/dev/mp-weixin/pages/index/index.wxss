@@ -1,0 +1,39 @@
+
+.index-contain.data-v-57280228{
+	background-image: url(/static/background/index.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color:#0B1E24;
+	width: 100vw;
+	height: 100vh;
+	color: #fff;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	text-align: center;
+}
+.index-body.data-v-57280228{
+	width: 100%;
+}
+.cell-pic.data-v-57280228{
+	width: 70%;
+	position: relative;
+	top: -50rpx;
+}
+.icon.data-v-57280228{
+	position: fixed;
+	bottom: 10vh;
+	width: 15%;
+}
+
+

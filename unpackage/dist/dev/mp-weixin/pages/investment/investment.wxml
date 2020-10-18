@@ -1,0 +1,1 @@
+<view class="investment-container"><view class="nav-bar"><text class="{{['nav-bar-item',(currentPlace==1)?'current-item':'']}}">市场</text><text class="{{['nav-bar-item',(currentPlace==2)?'current-item':'']}}">持有</text></view></view>
