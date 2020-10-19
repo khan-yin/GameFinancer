@@ -84,21 +84,21 @@ export default {
 					id: 3,
 					title: '项目一',
 					interestRate: 16,
-					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature',
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 3
 				},
 				{
 					id: 4,
 					title: '项目一',
 					interestRate: 16,
-					background: 'https://img.xjh.me/random_img.php?type=bg&return=302',
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 4
 				},
 				{
 					id: 5,
 					title: '项目一',
 					interestRate: 16,
-					background: 'https://img.xjh.me/random_img.php?ctype=nature&return=302',
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 5
 				}
 			]

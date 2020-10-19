@@ -29,5 +29,8 @@ page {
 	background-repeat: no-repeat;
 	background-position: 100%;
 	background-attachment: fixed;
+
 }
+
+
 </style>
