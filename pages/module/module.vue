@@ -97,6 +97,5 @@ export default {
 	border-radius: 30upx;
 	margin-top: 10upx;
 	background-color: #142a2e;
-	margin-top: 10upx;
 }
 </style>
