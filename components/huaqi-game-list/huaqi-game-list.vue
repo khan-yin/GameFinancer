@@ -105,7 +105,10 @@
 }
 
 .title-show{
-	position:fixed;
+	/* position:fixed; */
+	display: block;
+	position:absolute;
+	left: 20px;
 	z-index: 1;
 }
 .title-show image{

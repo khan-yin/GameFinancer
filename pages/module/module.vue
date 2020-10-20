@@ -1,21 +1,9 @@
 <template>
 	<view class="contains">
-		<searchBar class="search-box" />
+		<searchBar class="search-box" style="color: #FFFFFF;" />
 		<view class="list-contains">
 			<view class="list-body" v-for="item in marketData">
-				<view class="up-box">
-					<view class="body-box">
-						<view class="body-font">
-							<text class="font-avg1">{{ item.classType }}</text>
-							<view class="font-avg3">平均利率：<text class="text-rate">{{ item.avgRate }}%</text></view>
-						</view>
-						<huaqiGameList :title="item.title" :interestRate="item.interestRate" :background="item.background" />
-						<view class="pic">
-							<image src="../../static/common-icons/fire.png" mode="widthFix"></image>
-							<text>立刻买入</text>
-						</view>
-					</view>
-				</view>
+				<huaqiGameModuleList :avgRate="item.avgRate" :classType="item.classType" :title="item.title" :interestRate="item.interestRate" :background="item.background" />
 			</view>
 		</view>
 	</view>
@@ -24,10 +12,12 @@
 <script>
 import huaqiGameList from '../../components/huaqi-game-list/huaqi-game-list.vue';
 import searchBar from '../../components/searchBar/searchBar.vue';
+import huaqiGameModuleList from '../../components/huaqi-game-module-list/huaqi-game-module-list.vue';
 export default {
 	components: {
 		huaqiGameList,
-		searchBar
+		searchBar,
+		huaqiGameModuleList
 	},
 	data() {
 		return {
@@ -95,6 +85,7 @@ export default {
 .search-box {
 	margin-top: 40upx;
 	margin-bottom: 20upx;
+	color: #FFFFFF;
 }
 .list-contains {
 	display: flex;
@@ -106,37 +97,6 @@ export default {
 	border-radius: 30upx;
 	margin-top: 10upx;
 	background-color: #142a2e;
-}
-.body-box {
-	background-color: #060a0b;
-	border-radius: 30upx;
-}
-.up-box {
-	padding: 15upx 15upx;
-}
-.font-avg1{
-	font-size:40upx;
-	color:#B2B9BC;
-}
-.body-font{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 20upx;
-}
-.body-font>*{
-	flex: 1;
-}
-.text-rate{
-	color:#B79F67;
-	font-size: 40upx;
-}
-.pic{
-	position: fixed;
-	left: 0;
-}
-.pic image{
-	width: 180upx;
+	margin-top: 10upx;
 }
 </style>
