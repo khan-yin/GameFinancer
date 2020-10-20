@@ -86,6 +86,10 @@ export default {
 	margin-top: 40upx;
 	margin-bottom: 20upx;
 	color: #FFFFFF;
+	position: sticky;
+	top: 0upx;
+	z-index: 2;
+	background-color: #00191E;
 }
 .list-contains {
 	display: flex;
