@@ -2,13 +2,19 @@
 	<view class="contains">
 		<searchBar class="search-box" />
 		<view class="list-contains">
-			<view class="list-contains-item">
-				<view class="list-item-body" v-for="item in marketData" >
-					<view class="up-box">
-						<text>{{item.classType}}</text>
-						<text>{{item.avgRate}}</text>
+			<view class="list-body" v-for="item in marketData">
+				<view class="up-box">
+					<view class="body-box">
+						<view class="body-font">
+							<text class="font-avg1">{{ item.classType }}</text>
+							<view class="font-avg3">平均利率：<text class="text-rate">{{ item.avgRate }}%</text></view>
+						</view>
+						<huaqiGameList :title="item.title" :interestRate="item.interestRate" :background="item.background" />
+						<view class="pic">
+							<image src="../../static/common-icons/fire.png" mode="widthFix"></image>
+							<text>立刻买入</text>
+						</view>
 					</view>
-					<huaqiGameList :title="item.title" :interestRate="item.interestRate" :background="item.background" />
 				</view>
 			</view>
 		</view>
@@ -32,8 +38,8 @@ export default {
 					interestRate: 16,
 					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 1,
-					classType:'RPG',
-					avgRate:21
+					classType: '游戏类别',
+					avgRate: 21
 				},
 				{
 					id: 2,
@@ -41,8 +47,8 @@ export default {
 					interestRate: 16,
 					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 2,
-					classType:'RPG',
-					avgRate:21
+					classType: '游戏类别',
+					avgRate: 21
 				},
 				{
 					id: 3,
@@ -50,8 +56,8 @@ export default {
 					interestRate: 16,
 					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 3,
-					classType:'RPG',
-					avgRate:21
+					classType: '游戏类别',
+					avgRate: 21
 				},
 				{
 					id: 4,
@@ -59,8 +65,8 @@ export default {
 					interestRate: 16,
 					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 4,
-					classType:'RPG',
-					avgRate:21
+					classType: '游戏类别',
+					avgRate: 21
 				},
 				{
 					id: 5,
@@ -68,8 +74,8 @@ export default {
 					interestRate: 16,
 					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 5,
-					classType:'RPG',
-					avgRate:21
+					classType: '游戏类别',
+					avgRate: 21
 				}
 			]
 		};
@@ -84,10 +90,53 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	width: 100%;
+	width: 95%;
 }
 .search-box {
 	margin-top: 40upx;
 	margin-bottom: 20upx;
+}
+.list-contains {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.list-body {
+	width: 80%;
+	border-radius: 30upx;
+	margin-top: 10upx;
+	background-color: #142a2e;
+}
+.body-box {
+	background-color: #060a0b;
+	border-radius: 30upx;
+}
+.up-box {
+	padding: 15upx 15upx;
+}
+.font-avg1{
+	font-size:40upx;
+	color:#B2B9BC;
+}
+.body-font{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20upx;
+}
+.body-font>*{
+	flex: 1;
+}
+.text-rate{
+	color:#B79F67;
+	font-size: 40upx;
+}
+.pic{
+	position: fixed;
+	left: 0;
+}
+.pic image{
+	width: 180upx;
 }
 </style>

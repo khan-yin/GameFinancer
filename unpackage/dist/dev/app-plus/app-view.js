@@ -1967,15 +1967,18 @@ var render = function() {
       _c(
         "v-uni-view",
         { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-        [
-          _c(
+        _vm._l(_vm._$g(3, "f"), function(item, $10, $20, $30) {
+          return _c(
             "v-uni-view",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-            _vm._l(_vm._$g(4, "f"), function(item, $10, $20, $30) {
-              return _c(
+            {
+              key: item,
+              staticClass: _vm._$g("3-" + $30, "sc"),
+              attrs: { _i: "3-" + $30 }
+            },
+            [
+              _c(
                 "v-uni-view",
                 {
-                  key: item,
                   staticClass: _vm._$g("4-" + $30, "sc"),
                   attrs: { _i: "4-" + $30 }
                 },
@@ -1987,23 +1990,74 @@ var render = function() {
                       attrs: { _i: "5-" + $30 }
                     },
                     [
-                      _c("v-uni-text", { attrs: { _i: "6-" + $30 } }, [
-                        _vm._v(_vm._$g("6-" + $30, "t0-0"))
-                      ]),
-                      _c("v-uni-text", { attrs: { _i: "7-" + $30 } }, [
-                        _vm._v(_vm._$g("7-" + $30, "t0-0"))
-                      ])
+                      _c(
+                        "v-uni-view",
+                        {
+                          staticClass: _vm._$g("6-" + $30, "sc"),
+                          attrs: { _i: "6-" + $30 }
+                        },
+                        [
+                          _c(
+                            "v-uni-text",
+                            {
+                              staticClass: _vm._$g("7-" + $30, "sc"),
+                              attrs: { _i: "7-" + $30 }
+                            },
+                            [_vm._v(_vm._$g("7-" + $30, "t0-0"))]
+                          ),
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g("8-" + $30, "sc"),
+                              attrs: { _i: "8-" + $30 }
+                            },
+                            [
+                              _vm._v("平均利率："),
+                              _c(
+                                "v-uni-text",
+                                {
+                                  staticClass: _vm._$g("9-" + $30, "sc"),
+                                  attrs: { _i: "9-" + $30 }
+                                },
+                                [_vm._v(_vm._$g("9-" + $30, "t0-0") + "%")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _c("huaqiGameList", { attrs: { _i: "10-" + $30 } }),
+                      _c(
+                        "v-uni-view",
+                        {
+                          staticClass: _vm._$g("11-" + $30, "sc"),
+                          attrs: { _i: "11-" + $30 }
+                        },
+                        [
+                          _c("v-uni-image", {
+                            attrs: {
+                              src: _vm._$g("12-" + $30, "a-src"),
+                              mode: "widthFix",
+                              _i: "12-" + $30
+                            }
+                          }),
+                          _c("v-uni-text", { attrs: { _i: "13-" + $30 } }, [
+                            _vm._v("立刻买入")
+                          ])
+                        ],
+                        1
+                      )
                     ],
                     1
-                  ),
-                  _c("huaqiGameList", { attrs: { _i: "8-" + $30 } })
+                  )
                 ],
                 1
               )
-            }),
+            ],
             1
           )
-        ],
+        }),
         1
       )
     ],
@@ -2746,7 +2800,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.contains[data-v-0fbb7096] {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t-webkit-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\r\n\ttext-align: center;\r\n\twidth: 100%;\n}\n.search-box[data-v-0fbb7096] {\r\n\tmargin-top: 40upx;\r\n\tmargin-bottom: 20upx;\n}\r\n", ""]);
+exports.push([module.i, "\n.contains[data-v-0fbb7096] {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t-webkit-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\r\n\ttext-align: center;\r\n\twidth: 95%;\n}\n.search-box[data-v-0fbb7096] {\r\n\tmargin-top: 40upx;\r\n\tmargin-bottom: 20upx;\n}\n.list-contains[data-v-0fbb7096] {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t-webkit-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\n}\n.list-body[data-v-0fbb7096] {\r\n\twidth: 80%;\r\n\tborder-radius: 30upx;\r\n\tmargin-top: 10upx;\r\n\tbackground-color: #142a2e;\n}\n.body-box[data-v-0fbb7096] {\r\n\tbackground-color: #060a0b;\r\n\tborder-radius: 30upx;\n}\n.up-box[data-v-0fbb7096] {\r\n\tpadding: 15upx 15upx;\n}\n.font-avg1[data-v-0fbb7096]{\r\n\tfont-size:40upx;\r\n\tcolor:#B2B9BC;\n}\n.body-font[data-v-0fbb7096]{\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t-webkit-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: justify;\r\n\t-webkit-justify-content: space-between;\r\n\t        justify-content: space-between;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\r\n\tpadding-top: 20upx;\n}\n.body-font>*[data-v-0fbb7096]{\r\n\t-webkit-box-flex: 1;\r\n\t-webkit-flex: 1;\r\n\t        flex: 1;\n}\n.text-rate[data-v-0fbb7096]{\r\n\tcolor:#B79F67;\r\n\tfont-size: 40upx;\n}\n.pic[data-v-0fbb7096]{\r\n\tposition: fixed;\r\n\tleft: 0;\n}\n.pic uni-image[data-v-0fbb7096]{\r\n\twidth: 180upx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
