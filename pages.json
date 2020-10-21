@@ -52,7 +52,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/combine/combine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "组合",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "#C8E8D8",

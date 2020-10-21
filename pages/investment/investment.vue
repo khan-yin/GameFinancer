@@ -57,7 +57,8 @@ export default {
 				{
 					id: 4,
 					src: '../../static/common-icons/combine.png',
-					title: '组合'
+					title: '组合',
+					url: '../combine/combine'
 				},
 				{
 					id: 5,
