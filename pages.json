@@ -51,35 +51,36 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/combine/combine",
+			"style": {
+				"navigationBarTitleText": "组合",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/itemDetail/itemDetail",
+			"style": {
+				"navigationBarTitleText": "项目详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/fixedInvestment/fixedInvestment",
+			"style": {
+				"navigationBarTitleText": "定投",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/newPub/newPub",
+			"style": {
+				"navigationBarTitleText": "新发",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/combine/combine",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "组合",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/itemDetail/itemDetail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "项目详情",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/fixedInvestment/fixedInvestment",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "定投",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "#C8E8D8",
