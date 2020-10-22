@@ -19,7 +19,14 @@
 				</view>
 				<!-- 项目详情列表 -->
 				<view class="item-list">
-					<huaqiGameList v-for="item in marketData" :title="item.title" :rank="item.rank" :interestRate="item.interestRate" :background="item.background" />
+					<huaqiGameList
+						v-for="item in marketData"
+						@clicked="navTo('../itemDetail/itemDetail?id='+item.id)"
+						:title="item.title"
+						:rank="item.rank"
+						:interestRate="item.interestRate"
+						:background="item.background"
+					/>
 				</view>
 			</swiper-item>
 			<swiper-item class="swiper-item"></swiper-item>
@@ -63,7 +70,8 @@ export default {
 				{
 					id: 5,
 					src: '../../static/common-icons/invest.png',
-					title: '定投'
+					title: '定投',
+					url: '../fixedInvestment/fixedInvestment'
 				}
 			],
 			marketData: [
@@ -112,11 +120,13 @@ export default {
 		},
 		navTo(url) {
 			console.log(url);
-			uni.navigateTo({
-				url: url,
-				animationType: 'slide-in-right',
-				animationDuration: 200
-			});
+			if (url) {
+				uni.navigateTo({
+					url: url,
+					animationType: 'slide-in-right',
+					animationDuration: 200
+				});
+			}
 		}
 	},
 	mounted() {}
@@ -124,7 +134,6 @@ export default {
 </script>
 
 <style>
-
 .investment-container {
 	width: 100%;
 	display: flex;
@@ -134,7 +143,7 @@ export default {
 	text-align: center;
 }
 /* swiper */
-swiper{
+swiper {
 	width: 100%;
 	height: 100vh;
 	overflow: scroll;

@@ -1,12 +1,12 @@
 <template>
 	<view class="contains">
-		<view class="contains-button">{{ buttonTitle }}</view>
+		<view  v-if="!onlySwiper" class="contains-button">{{ buttonTitle }}</view>
 		<swiper indicator-color="white" indicator-active-color="#FFD66C" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 			<swiper-item v-for="(item, idx) in picture">
 				<view class="swiper-item"><image :src="item.src" mode="widthFix"></image></view>
 			</swiper-item>
 		</swiper>
-		<view class="contains-small">
+		<view class="contains-small" v-if="!onlySwiper">
 			<view class="contains-description">{{ combineName }}</view>
 		</view>
 	</view>
@@ -23,10 +23,17 @@ export default {
 		},
 		combineName: {
 			type: String
+		},
+		onlySwiper:{
+			type:Boolean,
+			default:false
 		}
 	},
 	data() {
 		return {};
+	},
+	mounted() {
+		console.log(this.picture[0]);
 	}
 };
 </script>
@@ -55,7 +62,7 @@ export default {
 .swiper-item image {
 	border-radius: 20upx 20upx 0 0;
 }
-.contains-small{
+.contains-small {
 	width: 100%;
 	display: flex;
 	flex-direction: column;

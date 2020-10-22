@@ -3,6 +3,14 @@
 		 <view class="search-box">
 		 	<searchBar></searchBar>
 		 </view>
+		 <view class="buttons">
+		 	<view class="button">
+		 		定投排行
+		 	</view>
+			<view class="button">
+				我的定投
+			</view>
+		 </view>
 		 <view class="list-contains" v-for="item in swipers">
 		 	<huaqiCombineSwiper :picture="item.picture" :buttonTitle="item.buttonTitle" :combineName="item.combineName" />
 		 </view>
@@ -139,11 +147,32 @@
 	}
 </script>
 
-<style>
+<style scoped>
 .search-box{
 	position: sticky;
 	top:0upx;
 	z-index: 1;
 	background-color: #00191E;
+}
+.buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.buttons>*{
+	flex: 1;
+}
+.button{
+	height: 50upx;
+	margin:40upx;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #0C2026;
+	border: 2px solid #414F47;
 }
 </style>

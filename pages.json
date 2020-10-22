@@ -61,6 +61,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/itemDetail/itemDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "项目详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/fixedInvestment/fixedInvestment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "定投",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

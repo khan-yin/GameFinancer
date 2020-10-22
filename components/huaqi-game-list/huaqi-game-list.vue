@@ -7,7 +7,7 @@
 			<image v-if="rank==3" src="./static/3.png" mode="widthFix"></image>
 		</view>
 		<!-- 整体栏目 -->
-		<view class="game-list-box">
+		<view class="game-list-box" @click="$emit('clicked')">
 			<image :src="background" ></image>
 			<view class="game-detail">
 				<text>{{title}}</text>
@@ -47,7 +47,7 @@
 			},
 			background:{
 				type:String
-			}
+			},
 		},
 		data() {
 			return {
