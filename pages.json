@@ -80,7 +80,28 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/buy/buy",
+            "style" : {
+				"navigationBarTitleText": "买入",
+				"enablePullDownRefresh": false
+			}
+        }
+        ,{
+            "path" : "pages/sold/sold",
+            "style" : {
+				"navigationBarTitleText": "卖出",
+				"enablePullDownRefresh": false
+			}
+        }
+        ,{
+            "path" : "pages/funding/funding",
+            "style" : {
+				"navigationBarTitleText": "众筹",
+				"enablePullDownRefresh": false
+			}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "#C8E8D8",

@@ -6,11 +6,11 @@
 				<view class="dev">3/5</view>
 				<view class="dev" style="text-decoration:underline">报告</view>
 			</view>
-			<view class="button-box">
-				<view class="box-1" style="background-color: #4D6067;">自选+</view>
-				<view class="box-2" style="background-color: #395966;">卖出</view>
-				<view class="box-3" style="background-color: #19383D;">众筹</view>
-				<view class="box-4" style="background-color: #00141B;">买入</view>
+			<view class="button-box" >
+				<view class="box-1" style="background-color: #4D6067;" @click="$emit('clickedone')">自选+</view>
+				<view class="box-2" style="background-color: #395966;" @click="$emit('soldout')">卖出</view>
+				<view class="box-3" style="background-color: #19383D;" @click="$emit('funding')">众筹</view>
+				<view class="box-4" style="background-color: #00141B;" @click="$emit('buyin')">买入</view>
 			</view>
 		</view>
 	</view>
@@ -20,6 +20,12 @@
 export default {
 	data() {
 		return {};
+	},
+	methods:{
+		btnclick(){
+			console.log(111);
+			this.$emit('clickedfour')
+		}
 	}
 };
 </script>

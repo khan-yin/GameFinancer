@@ -8,7 +8,9 @@
 		<!-- 表单 -->
 		<huaqiHistoryCharts />
 		<!-- 开发进程 -->
-		<devStatus />
+		<devStatus @buyin="navTo('../buy/buy')" 
+		@funding="navTo('../funding/funding')"
+		@soldout="navTo('../sold/sold')"/>
 		
 	</view>
 </template>
@@ -56,7 +58,18 @@ export default {
 			}
 		};
 	},
-	methods: {},
+	methods: {
+		navTo(url) {
+			console.log(url);
+			if (url) {
+				uni.navigateTo({
+					url: url,
+					animationType: 'slide-in-right',
+					animationDuration: 200
+				});
+			}
+		}
+	},
 	onLoad(option) {
 		console.log(option);
 	}

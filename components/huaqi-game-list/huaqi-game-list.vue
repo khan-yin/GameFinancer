@@ -95,6 +95,7 @@
 	border-radius:0 100upx 100upx 0;
 	/* box-shadow: -20px 0px 10px  rgba(25,55,69,1); */
 }
+
 .game-detail text{
 	font-size: 18px;
 	color: #83959E;
