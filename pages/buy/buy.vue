@@ -50,7 +50,7 @@
 			}
 		},
 		methods: {
-			//监听button，执行买入操作
+			//监听button，执行买入操作,设计中需要通过弹窗反馈
 			payGame(){
 				console.log(this.inputmoney);
 				this.inputmoney="";

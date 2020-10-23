@@ -11,7 +11,7 @@
 				</view>
 				<!-- 中间过渡的线 -->
 				<view class="line-right"></view>
-				<!-- 右边的线 -->
+				<!-- 右半部分 -->
 				<view class="cardright">
 					<view style="font-size: medium; color: white; margin: auto auto;">发放时间：
 						<text style="color: #DECD48; font-style: italic; ">{{FundingItem.time}}</text>
@@ -32,44 +32,43 @@
 		<!-- 选择回报 -->
 		<view class="FundingChoice">
 			<view style="color: #8DADB0; font-size: larger; font-family: Microsoft YaHei;">选择回报</view>
+			<!-- 分界线 -->
 			<view class="line-bottom"></view>
 			
-			<!-- 不知道怎么把文字搞上去，换了好几种图片背景button还是没搞出来 -->
+			<!-- 不知道怎么把文字搞上去，换了好几种图片背景button还是没搞出来 qwq-->
 			<view style="display:flex; flex-direction: column; justify-content: center;">
 				<view style="display: flex; flex-direction: row; justify-content: center;">
-					<view style="padding: 10upx;">
+					<view style="padding: 10upx;" @click="chooseItem(0)">
 					<image class="choiceImg" style=" transform: rotateX(180deg)" src="../../static/funding/choicebtn.png" mode="widthFix"></image>
 					</view>
-					<view style="padding: 10upx;">
+					<view style="padding: 10upx;"  @click="chooseItem(1)">
 						<image class="choiceImg" style="transform: rotate(180deg)"  src="../../static/funding/choicebtn.png" mode="widthFix"></image>
 					<!-- <span style="position: absolute; bottom: 0; left: 0;">添加文</span>	
 					 --></view>
 				</view>
 				
 				<view style="display: flex; flex-direction: row; justify-content: center;">
-					<view style="padding: 10upx;">
+					<view style="padding: 10upx;" @click="chooseItem(2)" >
 						<image class="choiceImg" src="../../static/funding/choicebtn.png" mode="widthFix"></image>
 					</view>
-					<view style="padding: 10upx;">
+					<view style="padding: 10upx;" @click="chooseItem(3)" >
 					<image class="choiceImg" style="transform: rotateY(180deg);" src="../../static/funding/choicebtn.png" mode="widthFix"></image>
 					</view>
 				</view>
 			</view>
 			
-			<!-- 数量监听 -->
-			
-			
+			<!-- 数量监听 点击动作效果失效-->
 			<view style=" width: 80%; display: flex; flex-direction: row; justify-content: space-between; ">
-				
 				<view style=" margin-left: 80upx; color: white; margin-top: 22upx; font-size: large;">数量</view>
-				<!-- <view><image class="icon" src="../../static/funding/addbtn.png" ></image></view>
-				 --><!-- 数量-->
+
 				<view style="margin-right: -100upx; margin-top: 5upx;">
 					<image class="icon" :src="addbtnUrl" @click="clickAdd"></image>
 				<text style="color: #F8D45B; font-style: italic; margin-bottom: 5upx; font-size: x-large; margin-right: 40upx;">{{count}}</text>
 				<image class="icon" :src="delbtnUrl" @click="clickDel" ></image>
 				</view>
+				
 			</view>
+			<!-- 分界线 -->
 			<view class="line-bottom"></view>
 			<!-- button -->
 			<button type="primary" style="color: #96A9AE; font-size: large; font-family: Microsoft YaHei;" class="btn" @click="btnClick">立即支持</button>
@@ -86,16 +85,16 @@
 				addbtnUrl: "../../static/funding/addbtn.png",
 				delbtnUrl: "../../static/funding/delbtn.png",
 				FundingItem: {
-					title: "回报名称1",
-					time: "2020/11/01",
-					Imgsrc: "https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302",
-					"describe": "在遥远的过去，人们藉由对神灵的信仰，获赐了驱动元素的力量，得以在荒野中筑起家园。五百年前，古国的覆灭却使得天地变异…如今，席卷大陆的灾难已经停息，和平却仍未如期光临。"
+						title: "回报名称1",
+						time: "2020/11/01",
+						Imgsrc: "https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302",
+						"describe": "在遥远的过去，人们藉由对神灵的信仰，获赐了驱动元素的力量，得以在荒野中筑起家园。五百年前，古国的覆灭却使得天地变异…如今，席卷大陆的灾难已经停息，和平却仍未如期光临。"
 				},
 				FundingList: [{
 						title: "回报名称1",
 						time: "2020/11/01",
 						Imgsrc: "https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302",
-						"describe": "谢谢大家的关注的支持"
+						"describe": "在遥远的过去，人们藉由对神灵的信仰，获赐了驱动元素的力量，得以在荒野中筑起家园。五百年前，古国的覆灭却使得天地变异…如今，席卷大陆的灾难已经停息，和平却仍未如期光临。"
 					},
 					{
 						title: "回报名称2",
@@ -115,10 +114,11 @@
 						Imgsrc: "https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302",
 						"describe": "谢谢大家的关注的支持"
 					},
-				]
+				],
 			}
 		},
 		methods: {
+			//数量监听
 			clickAdd(){
 				this.addbtnUrl="../../static/funding/addbtnclick.png";
 				this.count++;
@@ -129,6 +129,11 @@
 				this.count--;
 				this.delbtnUrl="../../static/funding/delbtn.png";
 			},
+			//切换回报
+			chooseItem(index){
+				this.FundingItem=this.FundingList[index];
+			},
+			//button点击事件
 			btnClick(){
 				console.log(this.inputmoney)
 				console.log(this.count)
@@ -251,11 +256,11 @@
 	}
 
 	.FundingChoice {
-		margin-top: 20upx auto;
+		margin-top: 30upx auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
-		background-color: #051316;
+		background-color: linear-gradient(to bottom, #051316,#292F35);
 	}
 </style>
