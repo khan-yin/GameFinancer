@@ -158,6 +158,7 @@
 </script>
 
 <style>
+	
 .contains{
 	display: flex;
 	flex-direction: column;
@@ -178,7 +179,7 @@ swiper {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	overflow: scroll;
+	
 }
 
 /* 导航栏 */
@@ -216,6 +217,7 @@ swiper {
 .backg{
 	/* margin: 10upx 80upx; */
 	width: 100%;
+	overflow: scroll;
 	/* display: flex;
 	flex-direction: column;5
 	text-align: center; */
