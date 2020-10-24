@@ -46,9 +46,6 @@ export default {
 </script>
 
 <style scoped>
-.
-	
-	
 .contains {
 	display: flex;
 	flex-direction: column;
