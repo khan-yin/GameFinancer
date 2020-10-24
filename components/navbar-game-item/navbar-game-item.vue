@@ -1,5 +1,5 @@
 <template>
-	<view class="contains-box">
+	<view class="contains-box"  @touchstart.stop="">
 		<view :class="{ 'current-item': idx===current }" @click="clickItem(idx)" v-for="(item, idx) in types" :key="idx">{{ item }}</view>
 	</view>
 </template>

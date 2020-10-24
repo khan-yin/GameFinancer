@@ -7,17 +7,27 @@
 			<text class="nav-bar-item" :class="{ 'current-item': currentPlace == 1 }" @click="currentPlace = 1">手游</text>
 		</view>
 
-		<navBarItem />
-
-		<swiper class="swiper" :duration="200" @change="swiperChange" :current="currentPlace">
-			<swiper-item class="backg">
-				<view class="list-contains" v-for="(item, index) in swipers" v-bind:key="item.gameName">
-					<!-- <indexItem :picture="item.picture" :describe="item.describe" :gameName="item.gameName"	 /> -->
-					<!-- 加判断，使得最后一个没有底栏 -->
-					<!-- <view class="line-bottom" v-if="index !== swipers.length - 1"></view> -->
+		<swiper id="swiper-total" :duration="200" @change="swiperChange" :current="currentPlace">
+			<swiper-item class="swiper-item-total">
+				<navBarItem></navBarItem>
+				<view class="box-contains">
+					<view class="list-contains" v-for="(item, index) in swipers" :key="index">
+						<indexItem :picture="item.picture" :describe="item.describe" :gameName="item.gameName" />
+						<!-- 加判断，使得最后一个没有底栏 -->
+						<view class="line-bottom" v-if="index !== swipers.length - 1"></view>
+					</view>
 				</view>
 			</swiper-item>
-			<swiper-item class="swiper-item"></swiper-item>
+			<swiper-item class="swiper-item-total">
+				<navBarItem></navBarItem>
+				<view class="box-contains">
+					<view class="list-contains" v-for="(item, index) in swipers" :key="index">
+						<indexItem :picture="item.picture" :describe="item.describe" :gameName="item.gameName" />
+						<!-- 加判断，使得最后一个没有底栏 -->
+						<view class="line-bottom" v-if="index !== swipers.length - 1"></view>
+					</view>
+				</view>
+			</swiper-item>
 		</swiper>
 	</view>
 </template>
@@ -77,8 +87,8 @@ export default {
 							id: 12
 						}
 					],
-					describle: 'xxxxxxxxxx',
-					gameName: '糖豆人'
+					describe: 'xxxxxx',
+					gameName: '原神人'
 				},
 				{
 					picture: [
@@ -99,8 +109,8 @@ export default {
 							id: 12
 						}
 					],
-					describe: 'xxxxxxxxxx',
-					gameName: '组合名称3'
+					describe: 'xxxxxx',
+					gameName: '原神人'
 				},
 				{
 					picture: [
@@ -121,30 +131,8 @@ export default {
 							id: 12
 						}
 					],
-					describe: 'xxxxxxxxxx',
-					gameName: '组合名称'
-				},
-				{
-					picture: [
-						{
-							src: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
-							id: 12
-						},
-						{
-							src: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
-							id: 12
-						},
-						{
-							src: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
-							id: 12
-						},
-						{
-							src: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
-							id: 12
-						}
-					],
-					describe: 'xxxxxxxxxx',
-					gameName: '组合名称4'
+					describe: 'xxxxxx',
+					gameName: '原神人'
 				}
 			]
 		};
@@ -158,29 +146,44 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .contains {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	text-align: center;
 	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
-
+.investment-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
 /* swiper */
-swiper {
+#swiper-total {
 	width: 100%;
 	height: 100vh;
 	overflow: scroll;
-}
-
-.swiper-item {
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	justify-content: center;
 }
-
+.swiper-item-total {
+	width: 100%;
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	overflow: scroll;
+}
 /* 导航栏 */
 .nav-bar {
 	display: flex;
@@ -205,23 +208,15 @@ swiper {
 .current-item {
 	font-size: 20px;
 }
-
 .line-bottom {
 	margin: 10upx auto;
 	width: 70%;
 	height: 1px;
 	border-top: solid #a6c0d6 3upx;
 }
-
-.backg {
-	/* margin: 10upx 80upx; */
-	/* width: 100%; */
-	/* overflow: scroll; */
-	/* display: flex;
-	flex-direction: column;5
-	text-align: center; */
-	/* background-color: #001418; */
-	/* linear-gradient(to bottom, #16242A,#001418) */
-	/* border-radius: 20upx; */
+.box-contains {
+	overflow: scroll;
+}
+.game-classify {
 }
 </style>

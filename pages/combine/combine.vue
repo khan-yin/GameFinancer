@@ -3,7 +3,7 @@
 		 <view class="search-box">
 		 	<searchBar></searchBar>
 		 </view>
-		 <view class="list-contains" v-for="item in swipers">
+		 <view class="list-contains" v-for="item in swipers" @click="navTo('../combineDetail/combineDetail')">
 		 	<huaqiCombineSwiper :picture="item.picture" :buttonTitle="item.buttonTitle" :combineName="item.combineName" />
 		 </view>
 	</view>
@@ -134,7 +134,15 @@
 			}
 		},
 		methods: {
-			
+			navTo(url){
+				if(url){
+					uni.navigateTo({
+						url:url,
+						animationType:'slide-in-right',
+						animationDuration:500
+					})
+				}
+			}
 		}
 	}
 </script>

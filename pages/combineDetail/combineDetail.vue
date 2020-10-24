@@ -1,8 +1,7 @@
 <template>
 	<view class="contains">
 		<view class="title">组合内容</view>
-		<view class="contain-game">
-			<view class="game-box" style="margin: 0;" v-for="(item, idx) in pageData">
+			<view class="game-box" style="margin: 0;" v-for="(item, idx) in pageData" @click="navTo('../itemDetail/itemDetail')">
 				<huaqiDetailList
 					style="margin: 0;"
 					:title="item.title"
@@ -11,7 +10,6 @@
 					:background="item.background"
 					:avgRate="item.avgRate"
 				></huaqiDetailList>
-			</view>
 		</view>
 
 		<view class="dev-status"><devStatus :combine="true"></devStatus></view>
@@ -95,7 +93,17 @@ export default {
 			]
 		};
 	},
-	methods: {}
+	methods: {
+		navTo(url){
+			if(url){
+				uni.navigateTo({
+					url:url,
+					animationDuration:500,
+					animationType:"slide-in-right"
+				})
+			}
+		}
+	}
 };
 </script>
 

@@ -1,13 +1,13 @@
 <template>
-	<view class="indexItem-contains" @mouseenter.native="changebtn" @mouseleave.native="changebtn">
-		<view style="background-color: #001418; margin: 0 auto; width: 90%;">
-			<huaqiCombineSwiper onlySwiper="true" :picture="picture" />
+	<view class="index-item-contains" @mouseenter.native="changebtn" @mouseleave.native="changebtn">
+		<view class="contains-index">
+			<huaqiCombineSwiper :onlySwiper="true" :picture="picture" />
 			<view class="contains-small">
-				<view class="contains-Namebutton" :class="{ active: hover }">
-					<view style="margin-left: 100upx; padding-top: 0; color: white; font-family: STYuanti;">{{ gameName }}</view>
-					<image :src="btnUrl" style="margin-top: -10upx; width: 75upx; height: 75upx; "></image>
+				<view class="contains-name-button" :class="{ active: hover }">
+					<view class="game-name">{{ gameName }}</view>
+					<image :src="btnUrl" mode="widthFix"></image>
 				</view>
-				<view style="color: white; font-size: small; font-family: STYuanti;">介绍: {{ describe }}</view>
+				<view class="descrition" style="color: white;padding: 5%;">介绍: {{ describe }}</view>
 			</view>
 		</view>
 	</view>
@@ -48,58 +48,41 @@ export default {
 </script>
 
 <style scoped>
-.indexItem-contains {
+.index-item-contains {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 	text-align: center;
-	width: 100%;
+	width: 100vw;
 	background-color: #00191e;
 }
-.contains > * {
-	margin-top: 30upx;
+.contains-index{
+	width: 100%;
 }
-
-.contains-button {
-	background-color: #031113;
-	width: 30%;
-	height: 40upx;
-	padding: 10upx 0;
-	margin-left: 40upx;
-	border-radius: 30upx;
-	box-shadow: 2upx -2upx 4upx 4upx #49595c;
-}
-.swiper-item image {
-	border-radius: 20upx 20upx 0 0;
-}
-.contains-small {
-	margin: 10upx 80upx;
-	/* width: 85%; */
+.contains-small{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background-color: #001418;
-	border-radius: 20upx;
+	width: 100%;
 }
-
-.contains-Namebutton {
-	/* padding-bottom: 0; */
+.contains-name-button{
+	width: 50%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
+	flex-direction:row;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
-	background-color: #0d2331;
-	width: 70%;
-	height: 60upx;
-	line-height: 50upx;
-	border-radius: 30upx;
-	margin: 10upx;
+	background-color: #0D2331;
 }
-
-.active {
-	background-color: #444d4a;
+	
+.contains-name-button image{
+	width: 80upx;
+	
+}
+.descrition{
+	width: 90%;
 }
 </style>
