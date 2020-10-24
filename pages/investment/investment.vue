@@ -48,12 +48,8 @@ export default {
 				{
 					id: 1,
 					src: '../../static/common-icons/new.png',
-					title: '新发'
-				},
-				{
-					id: 2,
-					src: '../../static/common-icons/rank.png',
-					title: '排行'
+					title: '新发',
+					url: '../newPub/newPub'
 				},
 				{
 					id: 3,

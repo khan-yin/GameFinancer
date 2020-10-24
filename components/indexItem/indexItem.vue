@@ -1,66 +1,50 @@
 <template>
 	<view class="indexItem-contains" @mouseenter.native="changebtn" @mouseleave.native="changebtn">
 		<view style="background-color: #001418; margin: 0 auto; width: 90%;">
-			<!-- <view  v-if="!onlySwiper" class="contains-button">{{ buttonTitle }}</view> -->
-			<swiper indicator-color="white" indicator-active-color="#FFD66C" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
-				<swiper-item v-for="(item, idx) in picture" :key="idx">
-					<view class="swiper-item">
-						<image :src="item.src" mode="widthFix" ></image>
-						<!-- <view style="color: #1D3245; width: 90%; height: 30upx; "></view> -->
-					</view>
-					
-				</swiper-item>
-			</swiper>
-			<view class="contains-small" v-if="!onlySwiper" >
-				<view class="contains-Namebutton" :class="{active : hover}">
-				<view style="margin-left: 100upx; padding-top: 0; color: white; font-family: STYuanti;">
-					{{ gameName }}
+			<huaqiCombineSwiper onlySwiper="true" :picture="picture" />
+			<view class="contains-small">
+				<view class="contains-Namebutton" :class="{ active: hover }">
+					<view style="margin-left: 100upx; padding-top: 0; color: white; font-family: STYuanti;">{{ gameName }}</view>
+					<image :src="btnUrl" style="margin-top: -10upx; width: 75upx; height: 75upx; "></image>
 				</view>
-					<image :src="btnUrl"   style="margin-top: -10upx; width: 75upx; height: 75upx; "></image>
-				</view>
-				<view style="color: white; font-size: small; font-family: STYuanti;">介绍: {{describe}}</view>
+				<view style="color: white; font-size: small; font-family: STYuanti;">介绍: {{ describe }}</view>
 			</view>
-			
 		</view>
-		
 	</view>
 </template>
 
 <script>
+import huaqiCombineSwiper from '../huaqiCombineSwiper/huaqiCombineSwiper.vue';
 export default {
+	components: {
+		huaqiCombineSwiper
+	},
 	props: {
 		picture: {
 			type: Array // {{src:ddd,id:ddd}}
 		},
-		describe:{
+		describe: {
 			type: String,
-			default: ""
+			default: ''
 		},
 		gameName: {
 			type: String
-		},
-		onlySwiper:{
-			type:Boolean,
-			default:false
 		}
 	},
 	data() {
 		return {
-			"btnUrl":'../../static/index/toDetail.png',
-			"hover":false
+			btnUrl: '../../static/index/toDetail.png',
+			hover: false
 		};
 	},
-	mounted() {
-		console.log(this.picture[0]);
-		console.log(this.describe)
-	},
-	methods:{
-		changebtn(){
-			this.hover= !this.hover
-			this.btnUrl = (this.hover===true)? '../../static/index/toDetailClicked.png' : '../../static/index/toDetail.png'
+	mounted() {},
+	methods: {
+		changebtn() {
+			this.hover = !this.hover;
+			this.btnUrl = this.hover === true ? '../../static/index/toDetailClicked.png' : '../../static/index/toDetail.png';
 		}
-	},
-}
+	}
+};
 </script>
 
 <style scoped>
@@ -71,13 +55,11 @@ export default {
 	align-content: center;
 	text-align: center;
 	width: 100%;
-	background-color: #00191E;
+	background-color: #00191e;
 }
 .contains > * {
 	margin-top: 30upx;
 }
-
-
 
 .contains-button {
 	background-color: #031113;
@@ -117,8 +99,7 @@ export default {
 	margin: 10upx;
 }
 
-.active{
-	background-color: #444D4A;
+.active {
+	background-color: #444d4a;
 }
-
 </style>

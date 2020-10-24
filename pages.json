@@ -105,6 +105,15 @@
 				"enablePullDownRefresh": false
 			}
         }
+        ,{
+            "path" : "pages/combineDetail/combineDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "组合详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
