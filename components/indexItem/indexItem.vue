@@ -1,9 +1,9 @@
 <template>
-	<view class="index-item-contains" @mouseenter.native="changebtn" @mouseleave.native="changebtn">
+	<view class="index-item-contains">
 		<view class="contains-index">
 			<huaqiCombineSwiper :onlySwiper="true" :picture="picture" />
 			<view class="contains-small">
-				<view class="contains-name-button" :class="{ active: hover }">
+				<view class="contains-name-button">
 					<view class="game-name">{{ gameName }}</view>
 					<image :src="btnUrl" mode="widthFix"></image>
 				</view>
@@ -34,15 +34,11 @@ export default {
 	data() {
 		return {
 			btnUrl: '../../static/index/toDetail.png',
-			hover: false
 		};
 	},
 	mounted() {},
 	methods: {
-		changebtn() {
-			this.hover = !this.hover;
-			this.btnUrl = this.hover === true ? '../../static/index/toDetailClicked.png' : '../../static/index/toDetail.png';
-		}
+		
 	}
 };
 </script>
@@ -76,13 +72,22 @@ export default {
 	align-items: center;
 	text-align: center;
 	background-color: #0D2331;
+	border-radius: 10upx;
 }
 	
 .contains-name-button image{
 	width: 80upx;
-	
+	border-radius: 10upx;
 }
 .descrition{
 	width: 90%;
+}
+
+.index-item-contains:hover  .contains-name-button{
+	background-color: #444D4A;
+}
+
+.index-item-contains:hover  .contains-name-button image{
+	content: url(../../static/index/toDetailClicked.png);
 }
 </style>

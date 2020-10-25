@@ -23,10 +23,10 @@
 	  		<image class="icon" src="../../static/common-icons/alipayicon.png"  /></image>
 	  		<image class="icon" src="../../static/common-icons/UnionPay.png" /></image>
 	      </view>
-	      <view>···其他方式</view>
+	      <view class="otherway">其他方式</view>
 	    </view>
 	  </view>
-		  <button type="primary" class="btn" @click="payGame">确认</button>
+		  <button  class="btn" @click="payGame">确认</button>
 		
   </view>
 </template>
@@ -76,7 +76,7 @@
 .buy-contain{
 	/* margin-top: 100upx; */
    /* margin-top: 100upx; */
-   flex: 1;
+  flex: 1;
   width: 90%;
   height: 40vh;
   background-color: #212F3A;
@@ -122,6 +122,7 @@
   margin-top: 15upx;
   padding: 10upx 10upx;
 }
+
 .way{
 	flex: 1;
   color: white;
@@ -130,15 +131,30 @@
   flex-direction: row;
 }
 .fkfs{
-  margin-right: 30upx;
+	height: 60upx;
+	line-height: 60upx;
+	vertical-align: middle;
+    margin-right: 20upx;
 }
+
+.otherway{
+	line-height: 60upx;
+	vertical-align: middle;
+	text-align: center;
+	width: 180upx; 
+	height: 60upx;
+}
+
 .imgs{
-  margin-right: 10upx;
-  
+  width: 300upx;
+  height: 55upx;
+  padding-bottom: 5upx;
+  margin-bottom: 5upx;
 }
 .icon {
-	width: 65upx;
-	height: 55upx;
+	width: 55upx;
+	height: 50upx;
+	padding: 10upx;
 }
 .btn{
 	background-color: #878E7A;

@@ -3,13 +3,13 @@
 		<view class="userCard">
 			<!-- 头像 -->
 			<view>
-				<image  class="ImgClass" src="../../static/profile/userImg.png" mode="widthFix"></image>
+				<image  class="ImgClass" :src="userimgUrl" mode="widthFix"></image>
 			</view>
 			<!-- 登录后显示名称，id -->
 			<view v-if="isLogin" class="LoginInfo">
 				<view class="user-name">
 					<image class="icon" src="../../static/profile/usericon.png"></image>
-					<view>
+					<view style="font-size: 40upx;">
 						{{username}}
 					</view>
 				</view>
@@ -26,15 +26,15 @@
 		</view>
 
 		<view class="box">
-			<view class="box-item">
+			<view class="box-item" >
 				账户
 			</view>
 
-			<view class="box-item">
+			<view class="box-item" style="background-color: #24393F;">
 				我的持债
 			</view>
 
-			<view class="box-item">
+			<view class="box-item" style="background-color: #192E34;">
 				众筹订单
 			</view>
 
@@ -46,7 +46,7 @@
 			<view class="box-item">
 				道具订单
 			</view>
-			<view class="box-item">
+			<view class="box-item" style="background-color: #24393F;">
 				周边订单
 			</view>
 			<view class="box-item">
@@ -56,7 +56,7 @@
 
 		<view class="box">
 			<view class="box-item">成为制作人</view>
-			<view class="box-item">我制作的项目</view>
+			<view class="box-item" style="background-color: #24393F;">我制作的项目</view>
 			<view class="box-item">设置</view>
 		</view>
 
@@ -70,9 +70,9 @@
 		data() {
 			return {
 				isLogin: true,
-				username: "xxx",
-				userId: "xxxxx",
-				userimgUrl: "",
+				username: "血小板",
+				userId: "0121810880322",
+				userimgUrl: "https://khany.top/assets/xxb.jpg"//"../../static/profile/userImg.png",
 			}
 		},
 		methods: {
@@ -97,7 +97,8 @@
 		color: #FFFFFF;
 		padding: 10upx;
 		border-radius: 5upx;
-		font-size: 20upx;
+		font-size: 25upx;
+		
 	}
 
 	.icon {
@@ -117,6 +118,8 @@
 		height: 250upx;
 		width: 250upx;
 		border-radius: 50%;
+		opacity:0.7;
+		box-shadow: 0 0 70upx rgb(69, 81, 91);
 	}
 
 	.LoginInfo {
@@ -127,6 +130,7 @@
 		height: 300upx;
 		vertical-align: middle;
 		align-items: center;
+		font-size: 80upx;
 	}
 
 	.user-name {
@@ -161,8 +165,7 @@
 		height: 34%;
 		width: 95%;
 		padding-left: 5%;
-
-		background-image: linear-gradient(to right, #152A30, #0F2226);
+		background-color: #152A30;
 		line-height: 66upx;
 	}
 </style>

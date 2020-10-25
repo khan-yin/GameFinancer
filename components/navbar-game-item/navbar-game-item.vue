@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .contains-box {
-	height: 70upx;
+	height: 100upx;
 	background-color: #00191e;
 	width: 95%;
 	margin: 3% 2%;

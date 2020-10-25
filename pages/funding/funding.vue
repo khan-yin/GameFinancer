@@ -71,7 +71,7 @@
 			<!-- 分界线 -->
 			<view class="line-bottom"></view>
 			<!-- button -->
-			<button type="primary" style="color: #96A9AE; font-size: large; font-family: Microsoft YaHei;" class="btn" @click="btnClick">立即支持</button>
+			<button style="color: #96A9AE; font-size: large; font-family: Microsoft YaHei;" class="btn" @click="btnClick">立即支持</button>
 		</view>
 	</view>
 </template>
@@ -149,11 +149,12 @@
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
+		align-items: center;
 	}
 
 	.wide-card {
 		width: 100%;
-		margin: 100upx 0upx auto;
+		margin: 10upx;
 		padding: 20upx 5upx;
 		/* height: 400upx; */
 		background-color: #121929;
@@ -205,6 +206,7 @@
 	
 	.cardImg {
 		margin-top: 30upx;
+		opacity:0.6;
 		width: 250upx;
 		height: 250upx;
 		border-radius: 50%;

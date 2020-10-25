@@ -21,7 +21,7 @@
 			      
 			    </view>
 			  </view>
-				  <button type="primary" class="btn" @click="payGame">确认</button>
+				  <button class="btn" @click="payGame">确认</button>
 	</view>
 </template>
 
