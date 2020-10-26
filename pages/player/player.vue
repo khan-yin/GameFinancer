@@ -66,11 +66,11 @@ export default {
 			listBox:[
 				{
 					title:"限定发行",
-					boximg:'https://xgpax.top/wp-content/uploads/2020/08/撑伞女孩-日本和服美女4k动漫壁纸.jpg'
+					background:'https://xgpax.top/wp-content/uploads/2020/08/撑伞女孩-日本和服美女4k动漫壁纸.jpg'
 				},
 				{
 					title:"每日抽奖",
-					boximg:'https://xgpax.top/wp-content/uploads/2020/08/撑伞女孩-日本和服美女4k动漫壁纸.jpg'
+					background:'https://xgpax.top/wp-content/uploads/2020/08/撑伞女孩-日本和服美女4k动漫壁纸.jpg'
 				}
 			],
 			line1: ["RPG","ACT","AVG","SLG"],
