@@ -20,13 +20,11 @@
 		{
 			"path": "pages/player/player",
 			"style": {
-				"navigationBarTitleText": "玩家"
-			}
-		},
-		{
-			"path": "pages/player/player",
-			"style": {
-				"navigationBarTitleText": "模块"
+				"navigationBarTitleText": "玩家",
+				"app-plus": {
+					"titleNView": false
+				},
+				"enablePullDownRefresh": false
 			}
 		},
 		{

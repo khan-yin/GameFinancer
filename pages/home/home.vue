@@ -18,6 +18,7 @@
 					</view>
 				</view>
 			</swiper-item>
+			
 			<swiper-item class="swiper-item-total">
 				<navBarItem></navBarItem>
 				<view class="box-contains">
