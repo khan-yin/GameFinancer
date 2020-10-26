@@ -9,7 +9,7 @@
 			<view v-if="isLogin" class="LoginInfo">
 				<view class="user-name">
 					<image class="icon" src="../../static/profile/usericon.png"></image>
-					<view style="font-size: 40upx;">
+					<view style="font-size: 40upx;">-
 						{{username}}
 					</view>
 				</view>
@@ -19,7 +19,7 @@
 				</view>
 			</view>
 
-			<view v-else class="LoginInfo">
+			<view v-else class="LoginInfo" @click="navTo('../Login/Login')">
 				登录
 			</view>
 
@@ -69,15 +69,25 @@
 	export default {
 		data() {
 			return {
-				isLogin: true,
+				isLogin: false,
 				username: "血小板",
 				userId: "0121810880322",
-				userimgUrl: "https://khany.top/assets/xxb.jpg"//"../../static/profile/userImg.png",
+				userimgUrl: "../../static/profile/userImg.png",//"https://khany.top/assets/xxb.jpg"//
 			}
 		},
 		methods: {
+			navTo(url) {
+				console.log(url);
+				if (url) {
+					uni.navigateTo({
+						url: url,
+						animationType: 'slide-in-right',
+						animationDuration: 200
+					});
+				}
+			}
+		},
 
-		}
 	}
 </script>
 

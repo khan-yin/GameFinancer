@@ -29,20 +29,46 @@
 					/>
 				</view>
 			</swiper-item>
-			<swiper-item class="swiper-item"></swiper-item>
+			<!-- 持有 -->
+			<swiper-item class="swiper-item">
+				<searchBar></searchBar>
+				<huaqiSortButton :titles="sortType">
+				</huaqiSortButton>
+				
+				<!-- 项目详情列表 -->
+				<view class="item-list">
+					<huaqiHavingList
+						v-for="item in havingData"
+						@clicked="navTo('../itemDetail/itemDetail?id='+item.id)"
+						:title="item.title"
+						:money="item.money"
+						:interestRate="item.interestRate"
+						:background="item.background"
+					/>
+				</view>
+				
+			</swiper-item>
 		</swiper>
 	</view>
 </template>
 
+
 <script>
+import huaqiSortButton from '../../components/huaqi-sort-button/huaqi-sort-button.vue';
+import searchBar from '../../components/searchBar/searchBar.vue'
 import huaqiGameList from '../../components/huaqi-game-list/huaqi-game-list.vue';
+import huaqiHavingList from '../../components/huaqi-having-list/huaqi-having-list.vue'
 export default {
 	components: {
-		huaqiGameList
+		huaqiGameList,
+		searchBar,
+		huaqiSortButton,
+		huaqiHavingList
 	},
 	data() {
 		return {
 			// 标记市场还是持有 0:市场 1：持有
+			sortType:["阶段","金额","利率","一般"],
 			currentPlace: 0,
 			buttonContains: [
 				{
@@ -106,6 +132,43 @@ export default {
 					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
 					rank: 5
 				}
+			],
+			havingData:[
+				{
+					id: 1,
+					title: '项目一',
+					interestRate: 16,
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
+					money: 35
+				},
+				{
+					id: 1,
+					title: '项目2',
+					interestRate: 16,
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
+					money: 34
+				},
+				{
+					id: 1,
+					title: '项目3',
+					interestRate: 16,
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
+					money: 33
+				},
+				{
+					id: 1,
+					title: '项目4',
+					interestRate: 16,
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
+					money: 32
+				},
+				{
+					id: 1,
+					title: '项目5',
+					interestRate: 16,
+					background: 'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302',
+					money: 31
+				},
 			]
 		};
 	},

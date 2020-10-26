@@ -114,6 +114,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/Login/Login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "注册",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
