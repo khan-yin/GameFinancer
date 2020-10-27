@@ -76,6 +76,7 @@ export default {
 	},
 	methods: {
 		change() {
+			// 改变状态栏
 			this.status = !this.status;
 			uni.setNavigationBarTitle({
 				title: this.status ? '登录' : '注册'
@@ -83,15 +84,16 @@ export default {
 			console.log(this.status);
 		},
 		async doLogin() {
+			// 登录点击
 			console.log(this.email, this.password);
-			// 验证输入
+			// 验证输入是否为空 为空则弹窗提示
 			if (this.email && this.password) {
 				uni.showLoading({
 					title: '登录中',
 					content: '请耐心等待',
 					mask: true
 				});
-				// 发起请求
+				// 发起登录请求
 				let res = uni.request({
 					url: 'http://server.kingfish404.cn/main/signIn',
 					method: 'POST',
@@ -111,17 +113,21 @@ export default {
 						if (res.data.code == 0) {
 							console.log(res)
 							console.log(res.data.authorization);
+							// 把jwt存到本地
 							uni.setStorageSync('authorization', res.data.authorization);
+							// 给定提示
 							uni.showToast({
 								title: '登录成功',
 								duration: 1000
 							});
+							// 1秒后跳转回去
 							setTimeout(() => {
 								uni.switchTab({
 									url: '../profile/profile?login=true'
 								});
 							}, 1000);
 						} else {
+							// 提示验证错误
 							uni.showModal({
 								title: '提示',
 								content: '密码或账号错误！',
@@ -130,6 +136,7 @@ export default {
 						}
 					},
 					fail() {
+						// 提示加载失败 
 						uni.hideLoading();
 						uni.showModal({
 							title: '提示',
@@ -162,6 +169,7 @@ export default {
 					content: '请耐心等待',
 					mask: true
 				});
+				// 封装登录数据
 				let data = {
 					email: this.email,
 					password1: this.password,
@@ -171,6 +179,7 @@ export default {
 					username: this.username
 				};
 				console.log(data);
+				// 请求注册接口
 				let res = uni.request({
 					url: 'http://server.kingfish404.cn/main/signUp',
 					method: 'POST',
@@ -180,12 +189,15 @@ export default {
 					},
 					data,
 					success:(res)=> {
+						// 隐藏加载提示
 						uni.hideLoading();
 						if(res.data.code==0){
+							// 给定提示
 							uni.showToast({
 								title:"注册成功",
 								duration:1000
 							})
+							// 一秒后返回登录界面
 							setTimeout(()=>{
 								this.change();
 							},1000)

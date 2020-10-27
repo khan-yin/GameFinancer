@@ -63,17 +63,23 @@ export default {
 		// 头像设置
 		chooseImg() {
 			uni.chooseImage({
+				// 只能选取一张
 				count: 1,
 				success: res => {
+					// 先拿到临时路径
 					console.log(res.tempFiles[0]);
 					this.userimgUrl = res.tempFiles[0].path;
+					// 永久保存 
 					uni.saveFile({
 						tempFilePath: this.userimgUrl,
+						// 成功后的回调事件 res里面有相关的path
 						success: res => {
 							console.log(res.savedFilePath);
 							this.userimgUrl = res.savedFilePath;
+							// 保存路径 下次进来自动选择
 							uni.setStorageSync('userimgUrl', this.userimgUrl);
 						},
+						// api调用失败
 						fail: err => {
 							console.log(err);
 						}
@@ -84,6 +90,7 @@ export default {
 	},
 	onShow() {
 		// uni.clearStorage('authorization')
+		// 根据Authorization判断登录状态 并发起请求检验jwt 如果失效自动跳转登录
 		let Authorization = uni.getStorageSync('authorization');
 		console.log(Authorization);
 		if (Authorization) {
@@ -92,19 +99,24 @@ export default {
 				url: 'http://server.kingfish404.cn/main/getUserInfo',
 				method: 'POST',
 				header: {
+					// 必须带上请求头 （jwt）机制
 					Authorization
 				},
 				success: res => {
 					console.log(res);
 					this.isLogin = true;
+					// 成功：设置数据
 					if (res.data.code == 0) {
 						this.username = res.data.username;
 						this.userId = res.data.useremail;
+						// 获取本地路径
 						this.userimgUrl = uni.getStorageSync('userimgUrl');
 						if (!this.userimgUrl) {
 							this.userimgUrl = '../../static/profile/userImg.png';
 						}
-					}else{
+					}
+					// 失效跳转登录页面
+					else{
 						this.navTo('../Login/Login')
 					}
 				}
