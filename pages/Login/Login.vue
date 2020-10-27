@@ -110,8 +110,8 @@ export default {
 						// 打印一下然后准备存起来 jwt
 						if (res.data.code == 0) {
 							console.log(res)
-							console.log(res.header.authorization);
-							uni.setStorageSync('authorization', res.header.authorization);
+							console.log(res.data.authorization);
+							uni.setStorageSync('authorization', res.data.authorization);
 							uni.showToast({
 								title: '登录成功',
 								duration: 1000

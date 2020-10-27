@@ -83,6 +83,7 @@ export default {
 		}
 	},
 	onShow() {
+		// uni.clearStorage('authorization')
 		let Authorization = uni.getStorageSync('authorization');
 		console.log(Authorization);
 		if (Authorization) {
