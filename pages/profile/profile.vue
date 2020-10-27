@@ -16,7 +16,7 @@
 			<view v-else class="LoginInfo" @click="navTo('../Login/Login')">登录</view>
 		</view>
 
-		<view class="box">
+		<view class="box" @click="waitFordevelop">
 			<view class="box-item">账户</view>
 
 			<view class="box-item" style="background-color: #24393F;">我的持债</view>
@@ -24,13 +24,13 @@
 			<view class="box-item" style="background-color: #192E34;">众筹订单</view>
 		</view>
 
-		<view class="box">
+		<view class="box" @click="waitFordevelop">
 			<view class="box-item">道具订单</view>
 			<view class="box-item" style="background-color: #24393F;">周边订单</view>
 			<view class="box-item">我的游戏账号</view>
 		</view>
 
-		<view class="box">
+		<view class="box" @click="waitFordevelop">
 			<view class="box-item">成为制作人</view>
 			<view class="box-item" style="background-color: #24393F;">我制作的项目</view>
 			<view class="box-item">设置</view>
@@ -85,6 +85,14 @@ export default {
 						}
 					});
 				}
+			});
+		},
+		//等待开发
+		waitFordevelop(){
+			uni.showModal({
+				title: '敬请期待',
+				content: '开发中...',
+				showCancel: false
 			});
 		}
 	},

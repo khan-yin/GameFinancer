@@ -10,7 +10,8 @@
 		<!-- 开发进程 -->
 		<devStatus @buyin="navTo('../buy/buy')" 
 		@funding="navTo('../funding/funding')"
-		@soldout="navTo('../sold/sold')"/>
+		@soldout="navTo('../sold/sold')"
+		@clickedone="waitFordevelop"/>
 		
 	</view>
 </template>
@@ -68,6 +69,14 @@ export default {
 					animationDuration: 200
 				});
 			}
+		},
+		//等待开发
+		waitFordevelop(){
+			uni.showModal({
+				title: '敬请期待',
+				content: '开发中...',
+				showCancel: false
+			});
 		}
 	},
 	onLoad(option) {

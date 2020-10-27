@@ -25,22 +25,22 @@
 					<searchBar></searchBar>
 				</view>
 				<huaqiCombineSwiper :picture="swiper.picture" :onlySwiper="true" />
-				<view class="class-box">
-					<view class="itemline" >
+				<view class="class-box" @click="waitFordevelop">
+					<view class="itemline">
 						<view class="item" v-for="item in line1">
 							<image class="icon" src="../../static/common-icons/wxicon.png" mode="widthFix"></image>
 							<text>{{item}}</text>
 						</view>
 					</view>
-					<view class="itemline" >
+					<view class="itemline">
 						<view class="item" v-for="item in line2">
 							<image class="icon" src="../../static/common-icons/wxicon.png" mode="widthFix"></image>
 							<text>{{item}}</text>
 						</view>
 					</view>
 				</view>
-				<huaqiPaymentItemList :title="listBox[0].title"   :background="listBox[0].background"  />
-				<huaqiPaymentItemList :title="listBox[1].title"   :background="listBox[1].background"  />
+				<huaqiPaymentItemList :title="listBox[0].title"   :background="listBox[0].background" @click.native="waitFordevelop" />
+				<huaqiPaymentItemList :title="listBox[1].title"   :background="listBox[1].background" @click.native="waitFordevelop" />
 				
 			</swiper-item>
 		</swiper>
@@ -150,6 +150,14 @@ export default {
 		swiperChange(e) {
 			console.log(e.detail.current);
 			this.currentPlace = e.detail.current;
+		},
+		//等待开发
+		waitFordevelop(){
+			uni.showModal({
+				title: '敬请期待',
+				content: '开发中...',
+				showCancel: false
+			});
 		}
 	}
 };
